@@ -24,8 +24,10 @@ jobs:
 
       - name: Verify Maven Installation
         run: mvn -version
+        
       - name: Compile with Maven
         run: mvn compile
+        
       - name: Build Docker Image
         run: docker build -t semimage .
       - name: Run image
