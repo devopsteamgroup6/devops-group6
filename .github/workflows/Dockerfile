@@ -1,4 +1,4 @@
 FROM ubuntu:latest
-LABEL authors="https://github.com/devopsteamgroup6/devops-group6.git"
+LABEL authors="devopsgroup6"
 
 ENTRYPOINT ["top", "-b"]
