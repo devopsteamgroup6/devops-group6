@@ -1,12 +1,5 @@
 name: A workflow for my Hello World App
-on:
-  push:
-    branches:
-      - main  # Specify the branch as needed
-    paths:
-      - '**.java'
-      - 'Dockerfile'
-      - 'pom.xml'
+on: push
 
 jobs:
   build:
@@ -14,48 +7,24 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v2
       - name: Set up JDK 11
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'temurin'
-
+          distribution: 'adopt'
       - name: Install Maven 3.6.3
-        run: |
-          wget https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
-          tar -xzf apache-maven-3.6.3-bin.tar.gz
-          sudo mv apache-maven-3.6.3 /opt/maven
-          echo "MAVEN_HOME=/opt/maven" >> $GITHUB_ENV
-          echo "/opt/maven/bin" >> $GITHUB_PATH
-
-      - name: Verify Maven Installation
-        run: mvn -version
-
-      - name: Build with Maven
+          run: |
+    wget https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+    tar -xzf apache-maven-3.6.3-bin.tar.gz
+    sudo mv apache-maven-3.6.3 /opt/maven
+    echo "MAVEN_HOME=/opt/maven" >> $GITHUB_ENV
+    echo "/opt/maven/bin" >> $GITHUB_PATH
+      - name: Compile with Maven
         run: mvn compile
-
-      - name: Verify Docker Installation
-        run: docker --version
-
-      - name: Clean up existing container
-        run: |
-          if [ "$(docker ps -aq -f name=semcontainer)" ]; then
-            docker rm -f semcontainer
-          fi
-
-      - name: Clean up existing image
-        run: |
-          if [ "$(docker images -q semimage)" ]; then
-            docker rmi -f semimage
-          fi
-
       - name: Build Docker Image
         run: docker build -t semimage .
-
       - name: Run image
         run: docker run --name semcontainer -d semimage
-
-      - name: View logs
+      - name: view logs
         run: docker logs semcontainer
