@@ -6,5 +6,5 @@ public class App
     {
         System.out.println("Boo yah!");
     }
-    //test 2
+    //test
 }
