@@ -26,3 +26,4 @@
  
  We recognize and take special care of systems that become integrated into the infrastructure of society.
 
+![workflow](https://github.com/<UserName>/<RepositoryName>/actions/workflows/main.yml/badge.svg)
