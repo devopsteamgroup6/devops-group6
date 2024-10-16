@@ -1,4 +1,4 @@
-![workflow](https://github.com/<devopsteamgroup6>/<devops-group6>/actions/workflows/main.yml/badge.svg)
+![workflow](https://github.com/devopsteamgroup6/devops-group6/actions/workflows/main.yml/badge.svg)
  # DEVOPS GROUP 6 CODE OF CONDUCT 
  
  We strive to achieve high quality in both the processes and products of professional work.
