@@ -34,3 +34,4 @@ jobs:
         run: docker run --name semcontainer -d semimage
       - name: view logs
         run: docker logs semcontainer
+
