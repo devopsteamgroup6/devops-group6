@@ -1,67 +1,51 @@
 // Use DBML to define your database structure
 // Docs: https://dbml.dbdiagram.io/docs
-
-Table "dept_emp" {
-  "emp_no" INT(11) 
-  "dept_no" CHAR(4) 
-  "from_date" DATE
-  "to_date" DATE
+// This code is for DevOpsteamgroup6
+Table "Country" {
+  "Code" INT(11) 
+  "Name" CHAR(4) 
+  "Continent" varchar (14)
+  "Region" int(12)
+  "Population" int(1200)
+  "Capital" varchar(20)
 
 Indexes {
-    (dept_no, emp_no) [pk]
-    emp_no [name: "emp_no"]
+    (Capital, Region) [pk]
+    Capital [name: "Region"]
     }
 }
-Table "departments" {
-   "dept_no" CHAR(4)
-   "dept_name" VARCHAR(40)
-   "HR_dept" varchar(12)
-   "Finance_dept" char(12)
-   "IT_dept" INT(11)
+Table "City" {
+   "Name" CHAR(12)
+   "Country" VARCHAR(40)
+   "District" varchar(12)
+   "Population" char(12)
    }
 
-Table "dept_manager" {
-  "dept_no" CHAR(4) 
-  "emp_no" INT(11)
-  "dept_emp" CHAR(11)
-  "dept_name" int(12)
-  "from_date" date
-  "to_date" date
-
-  Indexes {
-    (dept_name, dept_no) [pk]
-    dept_name [name: "dept_name"]
-  }
+Table "Capital" {
+  "Name" CHAR(12) 
+  "Country" INT(14)
+  "Population" CHAR(11)
 }
-Table "salaries"{
-  "emp_no" INT(11)
-  "salary" INT(11)
-  "from_date" DATE
-  "to_date" DATE
+Table "Language"{
+  "Chines" INT(16)
+  "English" INT(30)
+  "Hindi" char(30)
+  "Spinish" varchar(30)
+  "Arabic" char(20)
 Indexes {
-    (emp_no, salary) [pk]
-    salary [name: "salary"]
-  }
-}
-Table "employees" {
-     "emp_no" INT(11)
-     "birth_date" date
-     "first_name" varchar(14)
-     "last_name" varchar(12)
-     "gender EMUM" Sex('M,F') 
-     "hire_date" date
-}
-Table "titles" {
-      "emp_no" int(11)
-      "title" varchar(50)
-      "from_date" date
-      "to_date" date
+    (Arabic, English) [pk]
+    Hindi [name: "Spinish"]
+    }
 }     
-Ref "department":"departments"."dept_name" < "departments"."dept_no"
-Ref "city_ibfk_1":"dept_emp"."dept_no" < "departments"."dept_no"
-Ref "employees":"employees"."last_name" < "salaries"."from_date" 
-Ref "departments":"departments"."dept_name" < "employees"."hire_date"
-Ref "dept_nmanager":"employees"."emp_no" < "dept_manager"."dept_emp"
-Ref "dept_emp":"dept_emp"."to_date" < "employees"."last_name" 
-Ref "title":"employees"."first_name" < "titles"."from_date" 
-Ref "dept-emp":"departments"."dept_no" < "dept_emp"."to_date" 
+Ref "Capital":"Capital"."Name" < "City"."Name" 
+Ref "City":"City"."Country" > "Country"."Continent"
+Ref "City":"City"."Country" > "Country"."Region"
+Ref "Language":"Country"."Region" > "Language"."English"
+Ref "Language":"Country"."Region" > "Language"."Arabic"
+Ref "Language":"Country"."Region" > "Language"."Hindi"
+Ref "Language":"Country"."Region" > "Language"."Spinish"
+Ref "Language":"Country"."Region" > "Language"."Chines"
+Ref "Capital":"Capital"."Name" < "Country"."Code"
+Ref "Capital":"Capital"."Name" < "Country"."Population"
+Ref "City":"City"."Population" < "Country"."Name"
+Ref "City":"City"."District" < "Country"."Capital"
