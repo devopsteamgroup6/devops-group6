@@ -28,3 +28,4 @@
  We recognize and take special care of systems that become integrated into the infrastructure of society.
 
 ![Screenshot 2024-11-13 152408](https://github.com/user-attachments/assets/5b011f56-1db4-4e33-a256-d97e2e65f5b8)
+[mysql requirment met.docx](https://github.com/user-attachments/files/17932934/mysql.requirment.met.docx)
