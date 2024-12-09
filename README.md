@@ -29,6 +29,6 @@
 
 ![Screenshot 2024-11-13 152408](https://github.com/user-attachments/assets/5b011f56-1db4-4e33-a256-d97e2e65f5b8)
 
-![mysql requirment met.docx](https://github.com/user-attachments/files/18053841/mysql.requirment.met.docx)
+![MYSQL 32 Report Request DOWNLOAD HERE][mysql requirment met.docx](https://github.com/user-attachments/files/18053841/mysql.requirment.met.docx)
 
 ![Kanban board link HERE]https://zube.io/group-6-2/devopsteamgroup6/w/workspace-1/sprints
