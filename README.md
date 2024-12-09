@@ -1,4 +1,4 @@
-[workflow](https://github.com/devopsteamgroup6/devops-group6/actions/workflows/main.yml/badge.svg)
+![workflow](https://github.com/devopsteamgroup6/devops-group6/actions/workflows/main.yml/badge.svg)
  # DEVOPS GROUP 6 CODE OF CONDUCT 
  
  We strive to achieve high quality in both the processes and products of professional work.
@@ -29,5 +29,6 @@
 
 ![Screenshot 2024-11-13 152408](https://github.com/user-attachments/assets/5b011f56-1db4-4e33-a256-d97e2e65f5b8)
 
-[mysql requirment met.docx](https://github.com/user-attachments/files/18053841/mysql.requirment.met.docx)
-[Kanban board link HERE]https://zube.io/group-6-2/devopsteamgroup6/w/workspace-1/sprints
+![mysql requirment met.docx](https://github.com/user-attachments/files/18053841/mysql.requirment.met.docx)
+
+![Kanban board link HERE]https://zube.io/group-6-2/devopsteamgroup6/w/workspace-1/sprints
